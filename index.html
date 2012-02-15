@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>My Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script>
+      // Google Map API
+      $(document).ready(function(){
+        $('#maps').bind('pageshow', function(){
+          //地図作成
+          var target = document.getElementById('map'),
+          infowindow = new google.maps.InfoWindow(target),
+          latLng = new google.maps.LatLng(35.6604,139.729043), //地図の中心の緯度,経度
+          map = new google.maps.Map(target, {
+            zoom: 15, //ズーム率
+            mapTypeId: google.maps.MapTypeId.ROADMAP}),
+          marker = new google.maps.Marker({
+            title: '六本木ヒルズ', //配置するマーカーの名前
+            position: latLng,
+            map: map});
+          map.setCenter(latLng);
+          infowindow.open(map);
+        });
+      });
+		</script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+	
+	<style>
+	/*9.html:41行目～47行目*/
+	/*地図の幅や高さ等のスタイルを指定するCSS*/
+#map {
+	width: 100%;
+	height: 240px;
+	border: 7px solid #69C;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+	</style>
+	
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header" data-position="inline" data-theme="b">
+				<a href="index.html" data-icon="delete">Cancel</a>
+				<h1>jQuery mobile</h1>
+				<a href="index.html" data-icon="check" data-theme="b">Save</a>
+			</div><!-- /header -->
+			
+						
+			<div data-role="content">
+				<p>
+					Tap the icon
+				</p>
+			<div data-role="controlgroup">
+			<a href="#search" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="pop">検索ボックス</a>
+			<a href="#switch" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="pop">フリップスイッチ</a>
+			<a href="#selects" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="pop">セレクトメニュー</a>
+			<a href="#maps" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="pop">マップ</a>
+			</div>	
+			</div><!-- /content -->
+			
+			<div data-role="footer" class="ui-bar" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal">
+				<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+				</div>
+				<h4>Miladicia</h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+
+
+		<!--search page-->
+		<div data-role="page" id="search" data-theme="c" data-add-back-btn="true">
+		<div data-role="header" data-position="inline" data-theme="b">
+				<a href="index.html" data-icon="delete">Cancel</a>
+				<h1>検索ボックス</h1>
+				<a href="index.html" data-icon="check" data-theme="b">Save</a>
+			</div><!-- /header -->
+						
+			<div data-role="content">
+				<h2>
+					検索ボックス
+				</h2>
+				
+				<div data-role="fieldcontain">
+    			<label for="search-basic">Search Input:</label>
+    			<input type="search" name="search" id="search-basic" value="" />
+				</div>
+				
+				<div data-role="fieldcontain">
+				<label for="textarea-a">Source Code:</label>
+				<textarea name="textarea" id="textarea-a"><div data-role="fieldcontain"><label for="search-basic">Search Input:</label><input type="search" name="search" id="search-basic" value="" />
+</div>
+				</textarea>
+				</div>
+			</div><!-- /content -->
+			
+				<div data-role="footer" class="ui-bar" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal">
+				<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+				</div>
+				<h4>Miladicia</h4>
+			</div><!-- /footer -->
+		</div><!-- /search -->
+		
+		
+		<!--switch page-->
+		<div data-role="page" id="switch" data-theme="c" data-add-back-btn="true">
+		<div data-role="header" data-position="inline" data-theme="b">
+				<a href="index.html" data-icon="delete">Cancel</a>
+				<h1>フリップスイッチ</h1>
+				<a href="index.html" data-icon="check" data-theme="b">Save</a>
+			</div><!-- /header -->
+			
+			
+			<div data-role="content">
+				<h2>
+					フリップスイッチ
+				</h2>
+				
+				<div data-role="fieldcontain">
+					<label for="flip-b">Flip switch:</label>
+					<select name="slider" id="flip-b" data-role="slider">
+					<option value="no">No</option>
+					<option value="yes">Yes</option>
+					</select> 
+				</div>
+    			
+    							
+				<div data-role="fieldcontain">
+				<label for="textarea-a">Source Code:</label>
+				<textarea name="textarea" id="textarea-a"><div data-role="fieldcontain"><label for="flip-b">Flip switch:</label><select name="slider" id="flip-b" data-role="slider"><option value="no">No</option>
+<option value="yes">Yes</option></select> 
+</div>
+				</textarea>
+				</div>
+			</div><!-- /content -->
+			
+			
+			<div data-role="footer" class="ui-bar" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal">
+				<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+				</div>
+				<h4>Miladicia</h4>
+			</div><!-- /footer -->
+		</div><!-- /switch -->	
+			
+			
+		<!--selects page-->
+		<div data-role="page" id="selects" data-theme="c" data-add-back-btn="true">	
+		<div data-role="header" data-position="inline" data-theme="b">
+				<a href="index.html" data-icon="delete">Cancel</a>
+				<h1>セレクトメニュー</h1>
+				<a href="index.html" data-icon="check" data-theme="b">Save</a>
+			</div><!-- /header -->
+			
+			
+			<div data-role="content">
+				<h2>
+					セレクトメニュー
+				</h2>
+				
+				<div data-role="fieldcontain">
+				<label for="select-choice-1" class="select">Choose shipping method:</label>
+					<select name="select-choice-1" id="select-choice-1">
+					<option value="standard">Standard: 7 day</option>
+					<option value="rush">Rush: 3 days</option>
+					<option value="express">Express: next day</option>
+					<option value="overnight">Overnight</option>
+					</select>
+				</div>
+				    			
+    							
+				<div data-role="fieldcontain">
+				<label for="textarea-a">Source Code:</label>
+				<textarea name="textarea" id="textarea-a"><div data-role="fieldcontain"><label for="select-choice-1" class="select">Choose shipping method:</label><select name="select-choice-1" id="select-choice-1"><option value="standard">Standard: 7 day</option><option value="rush">Rush: 3 days</option><option value="express">Express: next day</option><option value="overnight">Overnight</option></select>
+</div>
+				</textarea>
+				</div>
+			</div><!-- /content -->
+			
+			
+			<div data-role="footer" class="ui-bar" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal">
+				<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+				</div>
+				<h4>Miladicia</h4>
+			</div><!-- /footer -->
+		</div><!-- /selects -->
+
+
+		<!--map page-->
+		<div data-role="page" id="maps" data-theme="c" data-add-back-btn="true">
+  			<div data-role="header" data-theme="b">
+    		<h1>Map</h1>
+  			</div>
+  		
+  		<div data-role="content">
+    	<h1>Map</h1>
+    	<div id="map"></div>
+    	</div>
+    	
+    		<div data-role="footer" class="ui-bar" data-theme="b">
+				<div data-role="controlgroup" data-type="horizontal">
+				<a href="index.html" data-role="button" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+				</div>
+				<h4>Miladicia</h4>
+			</div><!-- /footer -->
+		</div><!-- map -->
+	</body>
+</html>
